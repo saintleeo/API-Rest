@@ -30,7 +30,7 @@ const Client = sequelize.define("Client", {
 });
 
 Client.associate = function(models){
-    clearInterval.hasMany(models.Product);
+    Client.hasMany(models.Product);
 };
 
 module.exports = Client;
