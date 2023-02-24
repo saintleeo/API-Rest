@@ -1,5 +1,6 @@
 const { response } = require('express');
 const Product = require('../models/product');
+const Client = require('../models/client');
 
 async function create (req, res){
     try {
@@ -68,6 +69,34 @@ async function destroy (req, res){
     }
 };
 
+async function addClient (req,res) {
+    const {clientId, productId} = req.params;
+
+    try {
+        const client = await Client.findByPk(clientId);
+        const product = await Product.findByPk(productId);
+        await product.setClient(client);
+        return res.status(200).json(product);
+
+    } catch (error) {
+        return res.status(500).json({error});
+    }
+};
+
+async function removeClient (req,res) {
+    const {clientId, productId} = req.params;
+
+    try {
+        const client = await Client.findByPk(clientId);
+        const product = await Product.findByPk(productId);
+        await product.setClient(null);
+        return res.status(200).json(product);
+
+    } catch (error) {
+        return res.status(500).json({error});
+    }
+};
+
 
 module.exports = {
     create,
@@ -75,4 +104,6 @@ module.exports = {
     show,
     update,
     destroy,
+    addClient,
+    removeClient,
 };

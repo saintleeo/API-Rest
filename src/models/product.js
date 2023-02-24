@@ -26,7 +26,7 @@ const Product = sequelize.define("Product", {
         type: DataTypes.STRING,
         allowNull: false
     },
-});
+}, {timestamps: true});
 
 Product.associate = function(models) {
     Product.belongsTo(models.Client);

@@ -27,7 +27,7 @@ const Client = sequelize.define("Client", {
         type: DataTypes.STRING,
         allowNull: false
     },
-});
+}, {timestamps: true});
 
 Client.associate = function(models){
     Client.hasMany(models.Product);

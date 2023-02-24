@@ -1,5 +1,6 @@
 const { response } = require('express');
 const Client = require('../models/client');
+const Product = require('../models/product');
 
 async function create (req, res){
     try {
@@ -25,7 +26,10 @@ async function show (req, res) {
     const {id} = req.params;
 
     try {
-        const client = await Client.findByPk(id);
+        const client = await Client.findByPk(id, {include: [{
+            model: Product
+        }]
+    });
         return res.status(200).json({client});
 
     } catch (error) {
