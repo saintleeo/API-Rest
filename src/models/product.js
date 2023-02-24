@@ -7,7 +7,7 @@ const Product = sequelize.define("Product", {
         allowNull: false
     },
     
-    freight: {
+    delivery_price: {
         type: DataTypes.DOUBLE,
         allowNull: false
     },

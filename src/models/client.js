@@ -19,7 +19,7 @@ const Client = sequelize.define("Client", {
     },
 
     phone_number: {
-        type: DataTypes.STRING,
+        type: DataTypes.NUMBER,
         allowNull: false
     },
 
