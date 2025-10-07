@@ -1,6 +1,6 @@
 # API Rest | atv-backend
 
-Projeto de desenvolvimeneto de uma API Rest durante o processo seletivo da EJCM (Empresa Júnior da UFRJ). 
+Projeto de desenvolvimeneto de uma API Rest.
 
 ## Sobre o exercício:
 
